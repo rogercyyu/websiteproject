@@ -8,9 +8,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(logger("dev"));
-app.use(bodyParser.json());
-app.use(bodyParser.text());
 app.use(express.urlencoded({ extended: true }));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 const models = require("./models");
 const { allowedNodeEnvironmentFlags } = require("process");

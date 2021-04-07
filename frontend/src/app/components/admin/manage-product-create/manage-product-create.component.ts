@@ -83,7 +83,7 @@ export class ManageProductCreateComponent implements OnInit {
       .subscribe({
         next: () => {
           //this.alertService.success('Update successful', { keepAfterRouteChange: true });
-          this.router.navigate(['../'], { relativeTo: this.route });
+          this.router.navigate(['/admin'], { relativeTo: this.route });
         },
         error: (error) => {
           //this.alertService.error(error);
