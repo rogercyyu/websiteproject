@@ -5,7 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start:dev": "nodemon ./bin/www",
-    "test": "jest --verbose ./__tests__/jest && mocha './__tests__/mocha'"
+    "test": "jest --verbose ./__tests__/jest && mocha './__tests__/mocha'",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "15.x"
   },
   "author": "",
   "license": "ISC",
